@@ -3,18 +3,19 @@ function createArticleCard(articleData) {
     articleData.forEach(article => {
         const newDiv = $("<div>").append(
             (`<div class="view overlay">`),
+            (`<hr class="hr-light">`),
             (`<img class="card-img-top" src="../img/nano${(Math.floor(Math.random(2) * 10)) + 1}.jpg"
                 alt="NanoPart Img">`),
             (`<a><div class="mask rgba-white-slight"></div></a>`),
             (`<div class="card-body elegant-color white-text rounded-bottom">`),
             (`<a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a>`),
             (`<h4 class="card-title">${article.title}</h4>`),
-            (`<hr class="hr-light">`),
             (`<p class="card-text white-text mb-4">${article.summary}</p>`),
             (`<a href="${article.url}" id="readMoreLink" class="white-text d-flex justify-content-end"><h5>Read more <i class="fas fa-angle-double-right"></i></h5></a>`),
-            (`<input id='titleinput' name='title' >`),
             (`<textarea id='bodyinput' name='body'></textarea>`),
-            (`<button data-id='" + ${article._id} + "' id='savenote'>Save Note</button>`)
+            (`<br></br>`),
+            (`<button data-id='" + ${article._id} + "' id='savenote'>Save Note</button>`),
+            (`<hr class="hr-light">`)
         );
 
         if (article.note) {

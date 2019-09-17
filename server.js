@@ -29,13 +29,15 @@ app.use(express.json());
 // Make public folder static 
 app.use(express.static("public"));
 
-// Connect to the Mongo DB
-//TODO - instructions ssay to call const and not use useNewUrlParser code
-// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+//TODO - instructionsssay to call const and not use useNewUrlParser code
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
+mongoose.connect(MONGODB_URI);
+
 //temp code to see what's not working with create fuction
-mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
 //EXPRESS ROUTES---------------------------------------------------------
 //----Scrape websites and insert into mongo DB----
