@@ -109,3 +109,16 @@ body {
     margin-left: 15%;
     margin-right: 15%;
 }
+
+#bodyinput {
+    width: 200px;
+    height: 150px;
+    border-style: solid;
+    background-color: lightcyan;
+}
+#titleinput {
+    width: 200px;
+    height: 150px;
+    border-style: solid;
+    background-color: lightcyan;
+}

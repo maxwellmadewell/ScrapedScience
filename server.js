@@ -59,17 +59,21 @@ app.get("/scrape", function (req, res) {
                     .attr("href");
                 //TODO check if title already exists in database
 
-                db.Article.findOneAndUpdate({ title: result.title }, result, { upsert: true, new: true, runValidators: true })
-                    .catch(function (err) {
-                        console.log(err)
-                    });
-                //TODO this code works to create new 
-                // db.Article.create(result)
-                //     .then(function (dbArticle) {
-                //     })
+                // db.Article.findOneAndUpdate({ title: result.title }, result, { upsert: true, new: true, runValidators: true })
                 //     .catch(function (err) {
                 //         console.log(err)
                 //     });
+                
+                // db.Article.findOne({ title: result.title}, function(err, article) { 
+                    
+                // })
+                //TODO this code works to create new 
+                db.Article.create(result)
+                    .then(function (dbArticle) {
+                    })
+                    .catch(function (err) {
+                        console.log(err)
+                    });
             });
         }
         res.send("Scrape complete")
